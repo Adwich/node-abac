@@ -1,0 +1,78 @@
+{
+    "attributes": {
+        "user": {
+            "id": "user's id",
+            "deleted": "Account deleted",
+            "emailVerified": "Email verified",
+            "pwTemporary": "Is password set",
+            "twoFASet": "Is 2FA setup",
+            "group": "Groups user is in",
+            "active": "Active",
+            "banCount": "Times banned",
+            "dob": "Date of birth"
+        },
+        "group": {
+            "id": "Group IDs"
+        },
+        "office": {
+            "id": "Offices IDs"
+        }
+    },
+    "rules": {
+        "access-user": {
+            "allOf": [
+                {
+                    "allOf": {
+                        "user.id": {
+                            "comparison_type": "string",
+                            "comparison": "isStrictlyEqual",
+                            "field": "id"
+                        },
+                        "user.group": {
+                            "comparison_target": "group",
+                            "comparison_type": "array",
+                            "comparison": "isIn",
+                            "field": "id"
+                        }
+                    }
+                },
+                {
+                    "user.POMME": {
+                        "comparison_type": "string",
+                        "comparison": "isStrictlyEqual",
+                        "field": "id"
+                    }
+                }
+            ]
+        },
+        "test": {
+            "allOf": [
+                {
+                    "allOf": {
+                        "user.active": {
+                            "comparison_type": "boolean",
+                            "comparison": "boolAnd",
+                            "value": true
+                        },
+                        "user.dob": {
+                            "comparison_type": "datetime",
+                            "comparison": "isLessRecentThan",
+                            "value": "-21Y"
+                        },
+                        "user.banCount": {
+                            "comparison_type": "numeric",
+                            "comparison": "isLesserThanEqualTo",
+                            "value": 1
+                        },
+                        "user.group": {
+                            "comparison_target": "group",
+                            "comparison_type": "numeric",
+                            "comparison": "isStrictlyEqual",
+                            "field": "id"
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
