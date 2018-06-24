@@ -16,4 +16,10 @@ let resource = {
     }
 };
 
+console.time('enforce');
+const attributes = Abac.getRuleAttributes('test');
+console.log('attributes', attributes);
 const permit = Abac.enforce('test', subject, resource); // returns true
+console.log('permit', permit);
+console.timeEnd('enforce');
+return permit;
