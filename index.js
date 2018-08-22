@@ -5,7 +5,7 @@ let subject = {
     user: {
         active: true,
         dob: '1991-05-12',
-        banCount: 2,
+        banCount: 1,
         group: 12
     }
 };
