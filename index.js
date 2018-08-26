@@ -1,25 +1,26 @@
 const AbacNode = require('./lib/abac');
-const Abac = new AbacNode(['./abac-test.json']);
+const Abac = new AbacNode(['./policy.json']);
 
 let subject = {
     user: {
-        active: true,
-        dob: '1991-05-12',
-        banCount: 2,
-        group: 12
+        deleted: false,
+        emailVerified: true,
+        pwTemporary: false,
+        twoFASet: true,
+        group: [12]
     }
 };
 
 let resource = {
     group: {
-        id: 12
+        id: [12]
     }
 };
 
 console.time('enforce');
-const attributes = Abac.getRuleAttributes('test');
-console.log('attributes', attributes);
-const permit = Abac.enforce('test', subject, resource); // returns true
+const attributes = Abac.getRuleAttributes('access-brand');
+console.log(attributes);
+const permit = Abac.enforce('access-brand', subject, resource); // returns true
 console.log('permit', permit);
 console.timeEnd('enforce');
 return permit;
