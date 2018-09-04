@@ -1,0 +1,685 @@
+{
+    "attributes": {
+        "user": {
+            "id": "user's id",
+            "deleted": "Account deleted",
+            "emailVerified": "Email verified",
+            "pwTemporary": "Is password set",
+            "twoFASet": "Is 2FA setup",
+            "group": "Groups user is in"
+        },
+        "group": {
+            "id": "Group IDs"
+        }
+    },
+    "rules": {
+        "user-valid": {
+            "allOf": {
+                "user.deleted": {
+                    "comparison_type": "boolean",
+                    "comparison": "boolIsEqual",
+                    "value": false
+                },
+                "user.emailVerified": {
+                    "comparison_type": "boolean",
+                    "comparison": "boolIsEqual",
+                    "value": true
+                },
+                "user.pwTemporary": {
+                    "comparison_type": "boolean",
+                    "comparison": "boolIsEqual",
+                    "value": false
+                },
+                "user.twoFASet": {
+                    "comparison_type": "boolean",
+                    "comparison": "boolIsEqual",
+                    "value": true
+                }
+            }
+        },
+        "access-brand": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-brand": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-brand": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-brand": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-category": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-category": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-category": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-category": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-client": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-client": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-client": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-client": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-model": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-model": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-model": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-model": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-product": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-product": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-product": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-product": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-qrcode": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-qrcode": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-qrcode": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-qrcode": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-repair": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-repair": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-repair": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-repair": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-repair-event": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-repair-event": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-repair-event": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-repair-event": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-repair-type": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-repair-type": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-repair-type": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-repair-type": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-sale": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "ide"
+                }
+            }
+        },
+        "edit-sale": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-sale": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-sale": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-sale-item": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "ide"
+                }
+            }
+        },
+        "edit-sale-item": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-sale-item": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-sale-item": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-sale-transaction": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-sale-transaction": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-sale-transaction": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-sale-transaction": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-stock": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-stock": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-stock": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-stock": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-stock-update": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-stock-update": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-stock-update": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-stock-update": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-user": {
+            "anyOf": {
+                "user.id": {
+                    "comparison_type": "string",
+                    "comparison": "isStrictlyEqual",
+                    "field": "id"
+                },
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-user": {
+            "allOf": {
+                "user.id": {
+                    "comparison_type": "string",
+                    "comparison": "isStrictlyEqual",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-user": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-user": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "access-warehouse": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "edit-warehouse": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "insert-warehouse": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        },
+        "delete-warehouse": {
+            "allOf": {
+                "user.group": {
+                    "comparison_target": "group",
+                    "comparison_type": "array",
+                    "comparison": "intersect",
+                    "field": "id"
+                }
+            }
+        }
+    }
+}
